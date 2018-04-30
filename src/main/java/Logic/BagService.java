@@ -4,6 +4,8 @@ import DAO.BagDao;
 import Model.Bag;
 import Model.Game;
 import javafx.util.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -14,6 +16,7 @@ import java.util.*;
  */
 public class BagService {
 
+    private Logger logger= LoggerFactory.getLogger(BagService.class);
     /**
      * Táskák adatbázisbeli reprezentációjáért felelős objektum
      */
@@ -78,6 +81,7 @@ public class BagService {
         bagList.add(new Bag(false,bagNumbers.get(bagIndex),500000L,"Malaca van!",gameId)); //elvileg ennek kell a 22.-nek lennie, azaz 21-es index
 
         Collections.shuffle(bagList);
+        logger.info("Bags were generated");
         return bagList;
     }
 
@@ -114,6 +118,7 @@ public class BagService {
      * @param bag kinyitandó táska
      */
     public void openBag(Bag bag){
+        logger.debug("id: {0} bagnumber: {1} has been opned",bag.getId(),bag.getBagNumber());
         bag.setOpen(true);
         bagDao.updateBag(bag);
     }
@@ -131,11 +136,13 @@ public class BagService {
             bags=generateBags(gameId);
             for(int bagIndex=0;bagIndex<bags.size();bagIndex++)
                 bagDao.createBag(bags.get(bagIndex));
-
+            logger.info("Bags were inserted into database");
         }
         else {
             //__QUESTION__
             bags=bagDao.findAllBags(gameId);
+            if(bags==null || bags.size()==0)
+                logger.error("Loaded game has no bag");
         }
 
         return bags;

@@ -6,6 +6,9 @@ import Model.Game;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Az 'Áll az alku' játék logikai részét megvalósító osztály
  */
@@ -15,6 +18,7 @@ public class DealOrNoDeal {
     private GameService gameService;
     private Game game;
     private String playerName;
+    private Logger logger=LoggerFactory.getLogger(DealOrNoDeal.class);
 
     /**
      * DealOrNoDeal osztály privát inicializáló konstruktora.
@@ -87,8 +91,10 @@ public class DealOrNoDeal {
         if(!bag.isOpen()) {
             openedBags++;
             bagService.openBag(bag);
+            logger.info("id: " + bag.getId() + " number:" + bagNumber + " bag has been opened");
             return bag;
         }
+        logger.warn("id: " + bag.getId() + " number:" + bagNumber + " bag had been already opened");
         return null;
     }
 
@@ -101,6 +107,7 @@ public class DealOrNoDeal {
      * @return Ajánlat, melyet a bank tett
      */
     public long makeOffer(){
+        logger.info("Offer has been given");
         return (long) (bags.stream().mapToDouble(x->x.getAmmount()).average().getAsDouble() *
                 (offersAtOpenedBags.indexOf(openedBags)+1)
                 / 10.0);

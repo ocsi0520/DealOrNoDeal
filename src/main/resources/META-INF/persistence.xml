@@ -8,7 +8,7 @@
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:derby:dealornodealdb"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:dealornodealdb;create=true"/>
             <property name="javax.persistence.jdbc.user" value="woster"/>
             <property name="javax.persistence.jdbc.password" value="asd123"/>
             <property name="javax.persistence.schema-generation.database.action" value="update"/>

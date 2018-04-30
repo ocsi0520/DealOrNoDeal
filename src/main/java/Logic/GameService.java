@@ -2,6 +2,8 @@ package Logic;
 
 import DAO.GameDao;
 import Model.Game;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
  */
 public class GameService {
 
+    private Logger logger= LoggerFactory.getLogger(GameService.class);
     /**
      * Játékok adatbázisbeli reprezentációjáért felelős objektum
      */
@@ -44,6 +47,7 @@ public class GameService {
         game.setFinished(false);
         game.setPlayerName(playerName);
         gameDao.createGame(game);
+        logger.info("New game (id:{0}) has been created",game.getId());
         return game;
     }
 
@@ -52,9 +56,12 @@ public class GameService {
      *
      * Amennyiben az adatbázisban nem talált ilyen azonosítójú játékot {@code null}-t ad vissza
      * @param Id kereséshez felhasznált azonosító
-     * @return Keresett játék ({@code null}, ha nem található)
+     * @return Keresett játék.({@code null}, ha nem található)
      */
     public Game findGameById(Integer Id){
+        Game game=gameDao.readGame(Id);
+        if(game==null)
+            logger.error("Game with {0} id was not found", Id);
         return gameDao.readGame(Id);
     }
 }

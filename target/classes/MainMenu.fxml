@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Visualization.MainMenuController">
+   <children>
+      <Button layoutX="146.0" layoutY="77.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="309.0" text="Új Játék" onMouseClicked="#newGameClicked" />
+      <Button layoutX="146.0" layoutY="200.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="309.0" text="Játék betöltése" onMouseClicked="#loadGameClicked" />
+   </children>
+</AnchorPane>

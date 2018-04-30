@@ -1,0 +1,12 @@
+Logic/GameService.class
+DAO/GameDao.class
+Visualization/MainMenuController.class
+Model/Game.class
+Model/Bag.class
+Visualization/StudioController.class
+Visualization/ViewHelper.class
+Logic/BagService.class
+DAO/BagDao.class
+Visualization/Main.class
+Provider/EntityManagerProvider.class
+Logic/DealOrNoDeal.class

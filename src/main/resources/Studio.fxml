@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-image: url('try_background.jpg');" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Visualization.StudioController"
+id="WwW" fx:id="w1w">
+
+    <StackPane>
+        <ImageView id="0" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@malette_small.png" />
+            </image>
+        </ImageView>
+        <Text StackPane.alignment="CENTER" textAlignment="CENTER">blabla</Text>
+    </StackPane>
+
+       <ImageView id="1" fitHeight="102.0" fitWidth="120.0" layoutX="207.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="2" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="3" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="4" fitHeight="102.0" fitWidth="120.0" layoutX="923.0" layoutY="14.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="5" fitHeight="102.0" fitWidth="120.0" layoutX="298.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="6" fitHeight="102.0" fitWidth="120.0" layoutX="479.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="7" fitHeight="102.0" fitWidth="120.0" layoutX="660.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="8" fitHeight="102.0" fitWidth="120.0" layoutX="846.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="9" fitHeight="102.0" fitWidth="120.0" layoutX="745.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="10" fitHeight="102.0" fitWidth="120.0" layoutX="207.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="11" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="12" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="13" fitHeight="102.0" fitWidth="120.0" layoutX="755.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="14" fitHeight="102.0" fitWidth="120.0" layoutX="117.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="15" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="570.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="16" fitHeight="102.0" fitWidth="120.0" layoutX="298.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="17" fitHeight="102.0" fitWidth="120.0" layoutX="479.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="18" fitHeight="102.0" fitWidth="120.0" layoutX="660.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="19" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="570.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="20" fitHeight="102.0" fitWidth="120.0" layoutX="815.0" layoutY="579.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+
+       <ImageView id="21" fitHeight="102.0" fitWidth="120.0" layoutX="38.0" layoutY="706.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@malette_small.png" />
+           </image>
+       </ImageView>
+
+   <ImageView id="22" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@malette_small.png" />
+      </image>
+   </ImageView>
+
+
+</AnchorPane>

@@ -3,6 +3,9 @@
 .settings/
 target/
 
+# Derby Database
+dealornodealdb
+
 # Compiled class file
 *.class
 

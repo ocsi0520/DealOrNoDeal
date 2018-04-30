@@ -24,6 +24,11 @@
         </license>
     </licenses>
     <inceptionYear>2018</inceptionYear>
+    <organization>
+        <name>Debreceni Egyetem, Informatika Kar</name>
+        <url>http://www.inf.unideb.hu/</url>
+    </organization>
+
     <developers>
         <developer>
             <id>XAD782</id>

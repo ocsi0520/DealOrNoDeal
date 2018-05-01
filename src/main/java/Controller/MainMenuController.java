@@ -30,17 +30,11 @@ public class MainMenuController {
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             ApplicationContext.getInstance().setDealOrNoDeal(new DealOrNoDeal(new GameService(new GameDao(EntityManagerProvider.provideEntityManager())), new BagService(new BagDao(EntityManagerProvider.provideEntityManager())),result.get()));
-            Parent root = FXMLLoader.load(getClass().getResource("/Studio.fxml"));
-
-            Scene scene = new Scene(root, 1024, 768);
-
-            Main.stage.setTitle("sup?");
-            Main.stage.setScene(scene);
-            Main.stage.show();
+            goToGame();
         }
     }
 
-    public void loadGameClicked(MouseEvent event){
+    public void loadGameClicked(MouseEvent event) throws IOException {
         GameService gameService=new GameService(new GameDao(EntityManagerProvider.provideEntityManager()));
         List<Game> choices = gameService.getAllNotFinishedGames();
 
@@ -53,6 +47,18 @@ public class MainMenuController {
         if (result.isPresent()){
             DealOrNoDeal dealOrNoDeal=new DealOrNoDeal(gameService,new BagService(new BagDao(EntityManagerProvider.provideEntityManager())),result.get().getId());
             ApplicationContext.getInstance().setDealOrNoDeal(dealOrNoDeal);
+
+            goToGame();
         }
+    }
+
+    private void goToGame() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Studio.fxml"));
+
+        Scene scene = new Scene(root, 1024, 768);
+
+        Main.stage.setTitle("sup?");
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 }

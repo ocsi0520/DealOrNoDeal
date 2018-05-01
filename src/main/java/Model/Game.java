@@ -152,7 +152,7 @@ public class Game {
     public String toString() {
         return "Game{" +
                 "id=" + id +
-                ", bags=" + bags +
+                //", bags=" + bags +
                 ", finished=" + finished +
                 ", playerName='" + playerName + '\'' +
                 ", prize='" + prize + '\'' +

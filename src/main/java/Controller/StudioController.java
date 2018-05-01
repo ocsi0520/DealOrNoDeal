@@ -45,25 +45,6 @@ public class StudioController {
         //Text text= (Text) ((StackPane)event.getSource()).getChildren().get(1);
         //text.setText("aaaaaaa");
     }
-    public void proba(MouseEvent event){
-        /*
-        //Button clickedButton=(Button)action.getSource();
-        System.out.println("eddig jó" + event.getClickCount());
-        ImageView clickedImage= ((ImageView) event.getSource());
-        int Id=Integer.parseInt(clickedImage.getId());
-
-        System.out.println("Eddig:" + this.dealOrNoDeal.getBags().get(Id).isOpen());
-        this.dealOrNoDeal.openBag(this.dealOrNoDeal.getBags().get(Id).getBagNumber());
-        clickedImage.setDisable(true);
-        System.out.println("Mostmár: " + this.dealOrNoDeal.getBags().get(Id).isOpen());
-        */
-
-        StackPane selectedControl=((StackPane)event.getSource());
-        update(selectedControl);
-
-        //Text text= (Text) ((StackPane)event.getSource()).getChildren().get(1);
-        //text.setText("");
-    }
 
     private void update(int bagIdx) {
         // Find bag node
@@ -79,18 +60,21 @@ public class StudioController {
         if(!bag.isOpen()){
             //szöveg
             Text text = (Text) bagNode.lookup("Text");
-            text.setText("updated!");
+            text.setText(String.valueOf(bag.getBagNumber()));
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");
+            imageView.setImage(new Image(getClass().getResource("/malette_small.png").toString()));
             //imageView.setImage(new Image("@malette_small.png"));
         }
         else {
+            //szöveg
             Text text = (Text) bagNode.lookup("Text");
-            text.setText("updated twice biatch!");
+            text.setText(bag.getShowableAmmount());
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");
+            imageView.setImage(new Image(getClass().getResource("/bag_picture2.png").toString()));
             //imageView.setImage(new Image("@try_background.jpg"));
         }
     }

@@ -9,20 +9,23 @@
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-image: url('try_background.jpg');" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudioController"
 id="WwW" fx:id="w1w">
 
-    <StackPane>
-        <ImageView id="0" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+    <StackPane id="0" onMouseClicked="#imageClicked" layoutX="77.0" layoutY="443.0">
+        <ImageView  fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@malette_small.png" />
             </image>
         </ImageView>
-        <Text StackPane.alignment="CENTER" textAlignment="CENTER">blabla</Text>
+        <Text StackPane.alignment="CENTER" textAlignment="CENTER">aaaasdasd</Text>
     </StackPane>
 
+    <StackPane>
        <ImageView id="1" fitHeight="102.0" fitWidth="120.0" layoutX="207.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@malette_small.png" />
            </image>
        </ImageView>
+        <Text StackPane.alignment="CENTER" textAlignment="CENTER"/>
+    </StackPane>
 
 
        <ImageView id="2" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
@@ -164,7 +167,7 @@ id="WwW" fx:id="w1w">
            </image>
        </ImageView>
 
-   <ImageView id="22" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
+   <ImageView id="22" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true" disable="true">
       <image>
          <Image url="@malette_small.png" />
       </image>

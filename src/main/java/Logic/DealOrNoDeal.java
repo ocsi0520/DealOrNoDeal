@@ -53,6 +53,7 @@ public class DealOrNoDeal {
         this.game = this.gameService.findGameById(gameId);
         bags = this.bagService.getBagsAtStart(game, false);
         playerName = this.game.getPlayerName();
+        openedBags= (int) bags.stream().filter(bag->bag.isOpen()).count();
     }
 
 

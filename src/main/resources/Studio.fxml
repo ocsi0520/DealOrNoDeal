@@ -3,175 +3,230 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-image: url('try_background.jpg');" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudioController"
-id="WwW" fx:id="w1w">
 
-    <StackPane id="0" onMouseClicked="#imageClicked" layoutX="77.0" layoutY="443.0">
-        <ImageView  fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@malette_small.png" />
-            </image>
-        </ImageView>
-        <Text StackPane.alignment="CENTER" textAlignment="CENTER">aaaasdasd</Text>
+<AnchorPane id="WwW" fx:id="anchorPane" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-image: url('try_background.jpg');" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudioController">
+    <StackPane onMouseClicked="#imageClicked" id="0" layoutX="25.0" layoutY="14.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
     </StackPane>
-
-    <StackPane>
-       <ImageView id="1" fitHeight="102.0" fitWidth="120.0" layoutX="207.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-        <Text StackPane.alignment="CENTER" textAlignment="CENTER"/>
+    <StackPane onMouseClicked="#imageClicked" id="1" layoutX="200.0" layoutY="25.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
     </StackPane>
-
-
-       <ImageView id="2" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="3" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="4" fitHeight="102.0" fitWidth="120.0" layoutX="923.0" layoutY="14.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="5" fitHeight="102.0" fitWidth="120.0" layoutX="298.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="6" fitHeight="102.0" fitWidth="120.0" layoutX="479.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="7" fitHeight="102.0" fitWidth="120.0" layoutX="660.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="8" fitHeight="102.0" fitWidth="120.0" layoutX="846.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="9" fitHeight="102.0" fitWidth="120.0" layoutX="745.0" layoutY="18.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="10" fitHeight="102.0" fitWidth="120.0" layoutX="207.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="11" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="12" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="13" fitHeight="102.0" fitWidth="120.0" layoutX="755.0" layoutY="298.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="14" fitHeight="102.0" fitWidth="120.0" layoutX="117.0" layoutY="158.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="15" fitHeight="102.0" fitWidth="120.0" layoutX="388.0" layoutY="570.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="16" fitHeight="102.0" fitWidth="120.0" layoutX="298.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="17" fitHeight="102.0" fitWidth="120.0" layoutX="479.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="18" fitHeight="102.0" fitWidth="120.0" layoutX="660.0" layoutY="435.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="19" fitHeight="102.0" fitWidth="120.0" layoutX="572.0" layoutY="570.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="20" fitHeight="102.0" fitWidth="120.0" layoutX="815.0" layoutY="579.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-
-       <ImageView id="21" fitHeight="102.0" fitWidth="120.0" layoutX="38.0" layoutY="706.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true">
-           <image>
-               <Image url="@malette_small.png" />
-           </image>
-       </ImageView>
-
-   <ImageView id="22" fitHeight="102.0" fitWidth="120.0" layoutX="77.0" layoutY="443.0" onMouseClicked="#proba" pickOnBounds="true" preserveRatio="true" disable="true">
-      <image>
-         <Image url="@malette_small.png" />
-      </image>
-   </ImageView>
+    <StackPane onMouseClicked="#imageClicked" id="2" layoutX="375.0" layoutY="35.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="3" layoutX="548.0" layoutY="35.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="4" layoutX="731.0" layoutY="47.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="5" layoutX="25.0" layoutY="162.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="6" layoutX="200.0" layoutY="173.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="7" layoutX="375.0" layoutY="183.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="8" layoutX="548.0" layoutY="183.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="9" layoutX="731.0" layoutY="195.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="10" layoutX="25.0" layoutY="310.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="11" layoutX="200.0" layoutY="321.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="12" layoutX="375.0" layoutY="331.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="13" layoutX="548.0" layoutY="331.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="14" layoutX="731.0" layoutY="343.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="15" layoutX="22.0" layoutY="458.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="16" layoutX="197.0" layoutY="469.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="17" layoutX="372.0" layoutY="479.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="18" layoutX="545.0" layoutY="479.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="19" layoutX="720.0" layoutY="485.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="20" layoutX="887.0" layoutY="58.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane onMouseClicked="#imageClicked" id="21" layoutX="845.0" layoutY="639.0" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="115.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
 
 
 </AnchorPane>

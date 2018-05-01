@@ -4,8 +4,10 @@ import Logic.DealOrNoDeal;
 import Model.Bag;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
@@ -16,6 +18,10 @@ public class StudioController {
 
     ViewHelper viewHelper;
     DealOrNoDeal dealOrNoDeal;
+
+    @FXML
+    private AnchorPane anchorPane;
+
     public StudioController(){
         dealOrNoDeal=ApplicationContext.getInstance().getDealOrNoDeal();
         viewHelper = new ViewHelper(dealOrNoDeal.getBags());
@@ -23,11 +29,17 @@ public class StudioController {
 
     @FXML
     public void initialize() {
-
+         for(int i = 0; i < dealOrNoDeal.getBags().size(); ++i)
+             update(i);
     }
 
     public void imageClicked(MouseEvent event){
         StackPane selectedControl=((StackPane)event.getSource());
+
+        int bagIndex = Integer.parseInt(selectedControl.getId());
+        int bagNumber = dealOrNoDeal.getBags().get(bagIndex).getBagNumber();
+        dealOrNoDeal.openBag(bagNumber);
+
         update(selectedControl);
 
         //Text text= (Text) ((StackPane)event.getSource()).getChildren().get(1);
@@ -53,24 +65,33 @@ public class StudioController {
         //text.setText("");
     }
 
-    private void update(int bagIdx, Bag bagData) {
+    private void update(int bagIdx) {
         // Find bag node
-        StackPane bagNode = null;
-        // ...
+        StackPane bagNode = (StackPane) anchorPane.lookup("#" + Integer.toString(bagIdx));
 
         // Update bag node
         update(bagNode);
     }
 
     private void update(StackPane bagNode) {
-        /*int index=Integer.parseInt(bagNode.getId());
+        int index=Integer.parseInt(bagNode.getId());
         Bag bag=dealOrNoDeal.getBags().get(index);
-        if(bag.isOpen()){
+        if(!bag.isOpen()){
             //szöveg
+            Text text = (Text) bagNode.lookup("Text");
+            text.setText("updated!");
+
             //kép
-            ImageView imageView= (ImageView) bagNode.getChildren().get(0);
-            //imageView.set
+            ImageView imageView= (ImageView) bagNode.lookup("ImageView");
+            //imageView.setImage(new Image("@malette_small.png"));
         }
-*/
+        else {
+            Text text = (Text) bagNode.lookup("Text");
+            text.setText("updated twice biatch!");
+
+            //kép
+            ImageView imageView= (ImageView) bagNode.lookup("ImageView");
+            //imageView.setImage(new Image("@try_background.jpg"));
+        }
     }
 }

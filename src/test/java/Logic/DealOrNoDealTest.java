@@ -105,6 +105,7 @@ public class DealOrNoDealTest {
                 assertEquals(false,dealOrNoDeal.isOfferAccepted());
             }
             if(dealOrNoDeal.isOfferNeeded()) {
+                dealOrNoDeal.makeOffer();
                 dealOrNoDeal.acceptOffer();
                 assertEquals(true,dealOrNoDeal.isOfferAccepted());
             }

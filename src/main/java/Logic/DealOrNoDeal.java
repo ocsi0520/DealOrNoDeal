@@ -28,6 +28,7 @@ public class DealOrNoDeal {
     public DealOrNoDeal(GameService gameService, BagService bagService){
         this.gameService=gameService;
         this.bagService=bagService;
+        this.game=gameService.createNewGame("Test");
     }
 
     /**
@@ -54,6 +55,7 @@ public class DealOrNoDeal {
         bags = this.bagService.getBagsAtStart(game, false);
         playerName = this.game.getPlayerName();
         openedBags= (int) bags.stream().filter(bag->bag.isOpen()).count();
+        offerAccepted = game.getPrize() != null;
     }
 
 
@@ -80,7 +82,7 @@ public class DealOrNoDeal {
     /**
      * Eddigi ajánlatok listája
      */
-    private List<Integer> offers;
+    private List<Long> offers = new ArrayList<>();
 
     /**
      * Kinyit egy táskát a megadott számmal
@@ -109,9 +111,11 @@ public class DealOrNoDeal {
      */
     public long makeOffer(){
         logger.info("Offer has been given");
-        return (long) (bags.stream().mapToDouble(x->x.getAmmount()).average().getAsDouble() *
+        long offer= (long) (bags.stream().mapToDouble(x->x.getAmmount()).average().getAsDouble() *
                 (offersAtOpenedBags.indexOf(openedBags)+1)
                 / 10.0);
+        offers.add(offer);
+        return offer;
         //banker's offer = average value * turn number / 10
     }
 
@@ -136,13 +140,15 @@ public class DealOrNoDeal {
      */
     public void acceptOffer(){
         offerAccepted=true;
+        game.setPrize(offers.get(offers.size()-1).toString());
+        gameService.gameDao.updateGame(game);
     }
 
     /**
      * Megadja az eddigi ajánlatok listáját
      * @return Visszaadja az eddigi ajánlatok listáját
      */
-    public List<Integer> getPreviousOffers() {
+    public List<Long> getPreviousOffers() {
         return offers;
     }
 

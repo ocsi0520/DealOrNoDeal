@@ -7,6 +7,7 @@ import javafx.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 /**
@@ -68,7 +69,9 @@ public class BagService {
         int bagIndex;
         for(bagIndex=0;bagIndex<values.size();bagIndex++){
             Long currentValue=values.get(bagIndex);
-            bagList.add(new Bag(false,bagNumbers.get(bagIndex),currentValue,currentValue.toString(),gameId));
+            bagList.add(new Bag(false,bagNumbers.get(bagIndex),currentValue,
+                    NumberFormat.getInstance(new Locale("hu_HU")).format(currentValue)
+                    ,gameId));
         }
 
         //eddigi csak összeget tartalmazó táskákat összepakoltuk

@@ -1,7 +1,11 @@
 package Model;
 
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import javax.persistence.*;
+
+import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
 /**
  * Egy táska reprezentálásáért felelős osztály
@@ -186,13 +190,6 @@ public class Bag {
      */
     @Override
     public String toString() {
-        return "Bag{" +
-                "id=" + id +
-                ", open=" + open +
-                ", bagNumber=" + bagNumber +
-                ", ammount=" + ammount +
-                ", showableAmmount='" + showableAmmount + '\'' +
-                ", gameId=" + gameId +
-                '}';
+        return ReflectionToStringBuilder.toString(this, SHORT_PREFIX_STYLE);
     }
 }

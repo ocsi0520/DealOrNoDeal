@@ -111,7 +111,7 @@ public class DealOrNoDeal {
      */
     public long makeOffer(){
         logger.info("Offer has been given");
-        long offer= (long) (bags.stream().mapToDouble(x->x.getAmmount()).average().getAsDouble() *
+        long offer= (long) (bags.stream().filter(bag->!bag.isOpen()).mapToDouble(x->x.getAmmount()).average().getAsDouble() *
                 (offersAtOpenedBags.indexOf(openedBags)+1)
                 / 10.0);
         offers.add(offer);

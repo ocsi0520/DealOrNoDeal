@@ -1,5 +1,7 @@
 package Model;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -150,12 +152,6 @@ public class Game {
      */
     @Override
     public String toString() {
-        return "Game{" +
-                "id=" + id +
-                //", bags=" + bags +
-                ", finished=" + finished +
-                ", playerName='" + playerName + '\'' +
-                ", prize='" + prize + '\'' +
-                '}';
+        return playerName;
     }
 }

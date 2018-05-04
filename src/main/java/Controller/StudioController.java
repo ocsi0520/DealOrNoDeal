@@ -93,7 +93,8 @@ public class StudioController {
         if(!bag.isOpen()){
             //szöveg
             Text text = (Text) bagNode.lookup("Text");
-            text.setText(String.valueOf(bag.getBagNumber()));
+            //text.setText(String.valueOf(bag.getBagNumber()));
+            text.setText(String.valueOf(bag.getShowableAmmount()));
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");

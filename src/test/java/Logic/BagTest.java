@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
@@ -43,8 +44,9 @@ public class BagTest {
     @Test
     public void generateBagsShouldGenerateValuesInRange() {
         // Given
-        Bag b=new Bag();
-        doNothing().when(MockBagDao).createBag(b);
+        //Bag b=new Bag();
+        //doNothing().when(MockBagDao).createBag(b);
+
         // When
         List<Bag> bags=bagService.getBagsAtStart(game,true);
         // Then
@@ -57,8 +59,8 @@ public class BagTest {
     @Test
     public void generateBagsBagNumbersShouldBeDistinct(){
         // Given
-        Bag b=new Bag();
-        doNothing().when(MockBagDao).createBag(b);
+        //Bag b=new Bag();
+        //doNothing().when(MockBagDao).createBag(b);
         // When
         List<Bag> bags=bagService.getBagsAtStart(game,true);
 
@@ -73,8 +75,8 @@ public class BagTest {
     @Test
     public void generateBagsShowableAmmountsShouldBeDistinct(){
         // Given
-        Bag b=new Bag();
-        doNothing().when(MockBagDao).createBag(b);
+        //Bag b=new Bag();
+        //doNothing().when(MockBagDao).createBag(b);
         // When
         List<Bag> bags=bagService.getBagsAtStart(game,true);
 
@@ -88,8 +90,8 @@ public class BagTest {
     @Test
     public void generateBagsShouldSizeBeTwentyTwo(){ //Effective java book
         // Given
-        Bag b=new Bag();
-        doNothing().when(MockBagDao).createBag(b);
+        //Bag b=new Bag();
+        //doNothing().when(MockBagDao).createBag(b);
         // When
         List<Bag> bags=bagService.getBagsAtStart(game,true);
 
@@ -100,8 +102,8 @@ public class BagTest {
     @Test
     public void generateBagsShouldGenerateNonStringRewards() {
         // Given
-        Bag b=new Bag();
-        doNothing().when(MockBagDao).createBag(b);
+        //Bag b=new Bag();
+        //doNothing().when(MockBagDao).createBag(b);
         // When
         List<Bag> bags=bagService.getBagsAtStart(game,true);
 
@@ -111,7 +113,7 @@ public class BagTest {
         //Joker,2 tárgynyeremény, Malaca van!
         List<Bag> bagsWithNumber=
         bags.stream().filter(bag->
-        ! Long.toString(bag.getAmmount()).equals(bag.getShowableAmmount()))
+        ! Long.toString(bag.getAmmount()).equals(bag.getShowableAmmount().replaceAll(",","")))
                 .collect(Collectors.toList());
         assertEquals(4,bagsWithNumber.size());
     }

@@ -91,15 +91,46 @@ public class DealOrNoDeal {
      */
     public Bag openBag(int bagNumber){
         Bag bag = bags.stream().filter(x->x.getBagNumber() == bagNumber).findFirst().get();
+        if(bags.indexOf(bag)==21 && openedBags<21)
+            return null;
         if(!bag.isOpen()) {
             openedBags++;
             bagService.openBag(bag);
             logger.info("id: " + bag.getId() + " number:" + bagNumber + " bag has been opened");
+            if(isFinished()) { //Ha az összes táskát kinyitottuk
+                game.setFinished(true);
+                if(!isOfferAccepted()) // és nem fogadott el eddig egy ajánlatot se
+                    setGamePrize(bag.getShowableAmmount());
+                gameService.saveGame(game);
+            }
             return bag;
         }
         logger.warn("id: " + bag.getId() + " number:" + bagNumber + " bag had been already opened");
         return null;
     }
+
+    public boolean isFinished(){
+        return openedBags==22;
+    }
+
+    /**
+     * Lekérdezi a játék során elért nyereményt
+     * @return Nyeremény szövegesen
+     */
+    public String getGamePrize(){
+        return game.getPrize();
+    }
+
+    /**
+     * Játéknak beállítja a nyereményét
+     * @param prize beállítandó nyeremény
+     */
+    private void setGamePrize(String prize){
+        game.setPrize(prize);
+        gameService.saveGame(game);
+        logger.info("Prize has been written: {}",prize);
+    }
+
 
     public List<Bag> getBags(){
         return bags;
@@ -140,8 +171,7 @@ public class DealOrNoDeal {
      */
     public void acceptOffer(){
         offerAccepted=true;
-        game.setPrize(offers.get(offers.size()-1).toString());
-        gameService.gameDao.updateGame(game);
+        setGamePrize(offers.get(offers.size()-1).toString());
     }
 
     /**
@@ -150,27 +180,5 @@ public class DealOrNoDeal {
      */
     public List<Long> getPreviousOffers() {
         return offers;
-    }
-
-    /**
-     * A még nem nyitott táskák szöveges értékeinek lekérdezése 2 csoportra osztva (kisebbek-nagyobbak)
-     *
-     * Ezt már csak a végjátéknál, az utolsó 6, 4, illetve 2 nyitva maradt táskánál kell meghívni
-     * @return Egy két elemű tömb, amely a táskák szöveges értékeinek listájából áll
-     */
-    public List<List<String>> divideBagsToTwoGroups(){
-        List<String> notOpenedShowableAmmounts=
-        bags
-                .stream()
-                .filter(bag->!bag.isOpen())
-                .sorted(Comparator.comparing(bag -> bag.getAmmount()))
-                .map(bag->bag.getShowableAmmount())
-                .collect(Collectors.toList());
-
-        int halfOfTheCount=notOpenedShowableAmmounts.size()/2;
-        List<String> firstPart = notOpenedShowableAmmounts.subList(0,halfOfTheCount);
-        List<String> secondPart = notOpenedShowableAmmounts.subList(halfOfTheCount,notOpenedShowableAmmounts.size());
-
-        return Arrays.asList(firstPart,secondPart);
     }
 }

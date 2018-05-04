@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import java.io.IOException;
@@ -21,6 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class MainMenuController {
+    private Logger logger=LoggerFactory.getLogger(getClass());
     public void newGameClicked(MouseEvent event) throws IOException {
         TextInputDialog dialog = new TextInputDialog("Player");
         dialog.setTitle("Játékos neve");
@@ -53,12 +56,17 @@ public class MainMenuController {
     }
 
     private void goToGame() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Studio.fxml"));
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Studio.fxml"));
 
-        Scene scene = new Scene(root, 1024, 768);
+            Scene scene = new Scene(root, 1024, 768);
 
-        Main.stage.setTitle("sup?");
-        Main.stage.setScene(scene);
-        Main.stage.show();
+            Main.stage.setTitle("Stúdió");
+            Main.stage.setScene(scene);
+            Main.stage.show();
+        } catch (IOException e) {
+            logger.error("Hiba a main.fxml betöltésénél",e);
+            throw new RuntimeException(e);
+        }
     }
 }

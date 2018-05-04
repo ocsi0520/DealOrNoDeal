@@ -64,4 +64,12 @@ public class GameService {
             logger.error("Game with {0} id was not found", Id);
         return gameDao.readGame(Id);
     }
+
+    /**
+     * Elmenti az adott játék állapotát az adatbázisba
+     * @param currentGame Elmentendő játék
+     */
+    public void saveGame(Game currentGame){
+        gameDao.updateGame(currentGame);
+    }
 }

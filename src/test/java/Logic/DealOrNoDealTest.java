@@ -50,7 +50,8 @@ public class DealOrNoDealTest {
     @Test
     public void openBagShouldAlreadyOpenedBagReturnNull() {
         long seed=System.nanoTime();
-        int bagNumber=new Random(seed).nextInt(22);
+        int bagIndex=new Random(seed).nextInt(21); //21-edik indexet nem szabad adni, mivel azt az elején nem lehet kinyitni
+        int bagNumber=dealOrNoDeal.getBags().get(bagIndex).getBagNumber();
 
         dealOrNoDeal.openBag(bagNumber);
         assertNull(dealOrNoDeal.openBag(bagNumber));
@@ -59,9 +60,9 @@ public class DealOrNoDealTest {
     @Test
     public void openBagShouldNotYetOpenedBagReturnNotNull() {
         long seed=System.nanoTime();
-        int bagNumber=new Random(seed).nextInt(22)+1;
+        int bagIndex=new Random(seed).nextInt(21); //21-edik indexet nem szabad adni, mivel azt az elején nem lehet kinyitni
+        int bagNumber=dealOrNoDeal.getBags().get(bagIndex).getBagNumber();
 
-        System.out.println(bagNumber);
         assertNotNull(dealOrNoDeal.openBag(bagNumber));
     }
 
@@ -70,21 +71,11 @@ public class DealOrNoDealTest {
         long seed=System.nanoTime();
         Random random=new Random(seed);
         List<Integer> offersAtOpenedBags=Arrays.asList(5,8,11,14,16,18,20);
-
-        for(int testCase=0;testCase<100;testCase++){
-            int offerAt = offersAtOpenedBags
-                    .get(random
-                            .nextInt(offersAtOpenedBags
-                                    .size()));
-
-            for(int bagNumberAndOpenedBags=1;bagNumberAndOpenedBags<= offerAt; bagNumberAndOpenedBags++)
-            {
-                dealOrNoDeal.openBag(bagNumberAndOpenedBags);
-                boolean isOfferRound=offersAtOpenedBags.contains(bagNumberAndOpenedBags);
-                assertEquals(isOfferRound,dealOrNoDeal.isOfferNeeded());
-            }
-
-            dealOrNoDeal=new DealOrNoDeal(this.gameService,this.bagService,"Test");
+        for(int bagIndex=0;bagIndex<21;bagIndex++){
+            int bagNumber=dealOrNoDeal.getBags().get(bagIndex).getBagNumber();
+            dealOrNoDeal.openBag(bagNumber);
+            boolean isOfferRound=offersAtOpenedBags.contains(bagIndex+1);
+            assertEquals(isOfferRound,dealOrNoDeal.isOfferNeeded());
         }
     }
 
@@ -113,73 +104,4 @@ public class DealOrNoDealTest {
             dealOrNoDeal=new DealOrNoDeal(this.gameService,this.bagService,"Test");
         }
     }
-
-    @Test
-    public void divideBagsToTwoGroupsShouldSizesEqual() {
-        // Given
-        List<Integer> divideShouldBeDone=Arrays.asList(22-6,22-4,22-2);
-        // When
-        for(int testCase=0;testCase<3;testCase++){
-            for(int bagNumber=1;bagNumber<=divideShouldBeDone.get(testCase);bagNumber++){
-                dealOrNoDeal.openBag(bagNumber);
-            }
-
-            List<List<String>> twoGroups=dealOrNoDeal.divideBagsToTwoGroups();
-            List<String> smallerBagsShowableAmmounts=twoGroups.get(0);
-            List<String> largerBagsShowableAmmounts=twoGroups.get(1);
-            // Than
-            assertEquals(smallerBagsShowableAmmounts.size(),largerBagsShowableAmmounts.size());
-
-            dealOrNoDeal=new DealOrNoDeal(this.gameService,this.bagService,"Test");
-        }
-
-    }
-
-    @Test
-    public void divideBagsToTwoGroupsShouldBeDistinct() {
-        // Given
-        List<Integer> divideShouldBeDone=Arrays.asList(22-6,22-4,22-2);
-        // When
-        for(int testCase=0;testCase<3;testCase++){
-            for(int bagNumber=1;bagNumber<=divideShouldBeDone.get(testCase);bagNumber++){
-                dealOrNoDeal.openBag(bagNumber);
-            }
-
-            List<List<String>> twoGroups=dealOrNoDeal.divideBagsToTwoGroups();
-            List<String> smallerBagsShowableAmmounts=twoGroups.get(0);
-            List<String> largerBagsShowableAmmounts=twoGroups.get(1);
-            // Than
-            assertEquals(smallerBagsShowableAmmounts.stream().count(),smallerBagsShowableAmmounts.stream().distinct().count());
-            assertEquals(largerBagsShowableAmmounts.stream().count(),largerBagsShowableAmmounts.stream().distinct().count());
-
-            dealOrNoDeal=new DealOrNoDeal(this.gameService,this.bagService,"Test");
-        }
-
-    }
-
-    @Test
-    public void divideBagsToTwoGroupsShouldBeDisjoint() {
-        // Given
-        List<Integer> divideShouldBeDone=Arrays.asList(22-6,22-4,22-2);
-        // When
-        for(int testCase=0;testCase<3;testCase++){
-            for(int bagNumber=1;bagNumber<=divideShouldBeDone.get(testCase);bagNumber++){
-                dealOrNoDeal.openBag(bagNumber);
-            }
-
-            List<List<String>> twoGroups=dealOrNoDeal.divideBagsToTwoGroups();
-            List<String> smallerBagsShowableAmmounts=twoGroups.get(0);
-            List<String> largerBagsShowableAmmounts=twoGroups.get(1);
-            // Than
-            assertFalse(smallerBagsShowableAmmounts.stream().anyMatch(smallAmmount -> largerBagsShowableAmmounts.contains(smallAmmount)));
-
-            dealOrNoDeal=new DealOrNoDeal(this.gameService,this.bagService,"Test");
-        }
-
-    }
-    /*
-    @AfterClass
-    public void deleteAllNewlyMadeRecords(){
-
-    }*/
 }

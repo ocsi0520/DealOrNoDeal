@@ -100,7 +100,14 @@ public class DealOrNoDeal {
             if(isFinished()) { //Ha az összes táskát kinyitottuk
                 game.setFinished(true);
                 if(!isOfferAccepted()) // és nem fogadott el eddig egy ajánlatot se
-                    setGamePrize(bag.getShowableAmmount());
+                {
+                    if(bag.getShowableAmmount().equals("Joker")) {
+                        String formattedJokerAmmount = NumberFormat.getInstance(new Locale("hu_HU")).format(bag.getAmmount());
+                        setGamePrize(formattedJokerAmmount);
+                    }
+                    else
+                        setGamePrize(bag.getShowableAmmount());
+                }
                 gameService.saveGame(game);
             }
             return bag;
@@ -170,9 +177,9 @@ public class DealOrNoDeal {
      * Jelenlegi ajánlatot elfogadja
      */
     public void acceptOffer(){
-        offerAccepted=true;
-        long lastOffer=offers.get(offers.size()-1);
-        String formattedOffer= NumberFormat.getInstance(new Locale("hu_HU")).format(lastOffer);
+        offerAccepted = true;
+        long lastOffer = offers.get(offers.size()-1);
+        String formattedOffer = NumberFormat.getInstance(new Locale("hu_HU")).format(lastOffer);
         setGamePrize(formattedOffer);
     }
 

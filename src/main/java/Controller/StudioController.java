@@ -4,6 +4,7 @@ import Logic.DealOrNoDeal;
 import Model.Bag;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,8 +14,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -137,6 +138,11 @@ public class StudioController {
             //szöveg
             Text text = (Text) bagNode.lookup("Text");
             text.setText(bag.getShowableAmmount());
+
+            /*BackgroundFill fill = new BackgroundFill(viewHelper.ColorCalculator(bag), CornerRadii.EMPTY,
+                    Insets.EMPTY);
+            Background background = new Background(fill);
+            bagNode.setBackground(background);*/
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");

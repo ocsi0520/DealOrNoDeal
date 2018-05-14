@@ -16,7 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -138,6 +141,8 @@ public class StudioController {
             //szöveg
             Text text = (Text) bagNode.lookup("Text");
             text.setText(bag.getShowableAmmount());
+            text.setFill(viewHelper.ColorCalculator(bag));
+            text.setFont(Font.font("System", FontWeight.BOLD, 14));
 
             /*BackgroundFill fill = new BackgroundFill(viewHelper.ColorCalculator(bag), CornerRadii.EMPTY,
                     Insets.EMPTY);
@@ -147,6 +152,8 @@ public class StudioController {
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");
             imageView.setImage(new Image(getClass().getResource("/opened_bag_picture.png").toString()));
+            imageView.setFitHeight(120);
+            imageView.setFitWidth(150);
             //imageView.setImage(new Image("@try_background.jpg"));
         }
     }

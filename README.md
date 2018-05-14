@@ -7,4 +7,4 @@ A játékban lehetőség van játékállás visszatöltésére.
 ## Futtatás ##
 
 * Fordítás: `mvn clean install`
-* Futtatás: `java -jar target/DealOrNoDeal-*-shaded.jar`
+* Futtatás: `mvn jfx:run` vagy `mvn exec:java -Dexec.mainClass="Controller.Main"`

@@ -28,7 +28,6 @@ public class DealOrNoDeal {
     public DealOrNoDeal(GameService gameService, BagService bagService){
         this.gameService=gameService;
         this.bagService=bagService;
-        this.game=gameService.createNewGame("Test");
     }
 
     /**

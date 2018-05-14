@@ -21,6 +21,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.text.View;
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Optional;
 
 //https://stackoverflow.com/questions/34785417/javafx-fxml-controller-constructor-vs-initialize-method?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
@@ -57,10 +59,11 @@ public class StudioController {
 
         if(dealOrNoDeal.isOfferNeeded()){ //Ha kell adni ajánlatot
             long offer = dealOrNoDeal.makeOffer();
+            String formattedOffer = NumberFormat.getInstance(new Locale("hu_HU")).format(offer);
             if(!dealOrNoDeal.isOfferAccepted()) { //és még nem fogadott el egyet sem, akkor elfogadhatja
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Banktól új ajánlat jött");
-                alert.setHeaderText("A bank ajánlata " + offer + " ft.");
+                alert.setHeaderText("A bank ajánlata " + formattedOffer + " ft.");
                 alert.setContentText("Elfogadod az ajánlatot?");
 
                 ButtonType buttonTypeYes = new ButtonType("Igen");
@@ -76,7 +79,7 @@ public class StudioController {
             else{ //Ha már fogadott el előtte ajánlatot, akkor csak szemléltetésül írjuk ki
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Banktól új ajánlat jött");
-                alert.setHeaderText("A bank ajánlata " + offer + " ft lett volna.");
+                alert.setHeaderText("A bank ajánlata " + formattedOffer + " ft lett volna.");
                 //alert.setContentText("I have a great message for you!");
                 alert.showAndWait();
             }
@@ -122,8 +125,8 @@ public class StudioController {
         if(!bag.isOpen()){
             //szöveg
             Text text = (Text) bagNode.lookup("Text");
-            //text.setText(String.valueOf(bag.getBagNumber()));
-            text.setText(String.valueOf(bag.getShowableAmmount()));
+            text.setText(String.valueOf(bag.getBagNumber()));
+            //text.setText(String.valueOf(bag.getShowableAmmount()));
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");
@@ -137,7 +140,7 @@ public class StudioController {
 
             //kép
             ImageView imageView= (ImageView) bagNode.lookup("ImageView");
-            imageView.setImage(new Image(getClass().getResource("/bag_picture2.png").toString()));
+            imageView.setImage(new Image(getClass().getResource("/opened_bag_picture.png").toString()));
             //imageView.setImage(new Image("@try_background.jpg"));
         }
     }

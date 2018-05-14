@@ -6,29 +6,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.layout.BorderPane?>
 <AnchorPane id="WwW" fx:id="anchorPane" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-image: url('background_2.jpg');" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudioController">
-    <StackPane onMouseClicked="#imageClicked" id="0" layoutX="25.0" layoutY="14.0" prefHeight="63.0" prefWidth="98.0">
-        <children>
-            <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@malette_small.png" />
-                </image>
-            </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER"/>
-        </children>
-    </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="1" layoutX="200.0" layoutY="25.0" prefHeight="63.0" prefWidth="98.0">
-        <children>
-            <ImageView fitHeight="102.0" fitWidth="120.0"  pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@malette_small.png" />
-                </image>
-            </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
-        </children>
-    </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="2" layoutX="375.0" layoutY="35.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="0" layoutX="22.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -38,7 +17,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="3" layoutX="548.0" layoutY="35.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="1" layoutX="190.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -48,7 +27,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="4" layoutX="731.0" layoutY="47.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="2" layoutX="355.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -58,7 +37,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="5" layoutX="25.0" layoutY="162.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="3" layoutX="526.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -68,7 +47,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="6" layoutX="200.0" layoutY="173.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="4" layoutX="700.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -78,7 +57,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="7" layoutX="375.0" layoutY="183.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="5" layoutX="25.0" layoutY="162.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -88,7 +67,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="8" layoutX="548.0" layoutY="183.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="6" layoutX="190.0" layoutY="162.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -98,7 +77,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="9" layoutX="731.0" layoutY="195.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="7" layoutX="355.0" layoutY="162.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -108,7 +87,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="10" layoutX="25.0" layoutY="310.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="8" layoutX="526.0" layoutY="162.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -118,7 +97,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="11" layoutX="200.0" layoutY="321.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="9" layoutX="700.0" layoutY="162.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -128,7 +107,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="12" layoutX="375.0" layoutY="331.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="10" layoutX="25.0" layoutY="310.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -138,7 +117,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="13" layoutX="548.0" layoutY="331.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="11" layoutX="190.0" layoutY="310.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -148,7 +127,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="14" layoutX="731.0" layoutY="343.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="12" layoutX="355.0" layoutY="310.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -158,7 +137,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="15" layoutX="22.0" layoutY="458.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="13" layoutX="526.0" layoutY="310.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -168,7 +147,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="16" layoutX="197.0" layoutY="469.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="14" layoutX="700.0" layoutY="310.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -178,7 +157,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="17" layoutX="372.0" layoutY="479.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="15" layoutX="22.0" layoutY="458.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -188,7 +167,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="18" layoutX="545.0" layoutY="479.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="16" layoutX="190.0" layoutY="458.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -198,7 +177,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="19" layoutX="720.0" layoutY="485.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="17" layoutX="355.0" layoutY="458.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -208,7 +187,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="20" layoutX="887.0" layoutY="58.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="18" layoutX="526.0" layoutY="458.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -218,7 +197,27 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
         </children>
     </StackPane>
-    <StackPane onMouseClicked="#imageClicked" id="21" layoutX="845.0" layoutY="639.0" prefHeight="63.0" prefWidth="98.0">
+    <StackPane id="19" layoutX="700.0" layoutY="458.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane id="20" layoutX="872.0" layoutY="25.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
+        <children>
+            <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@malette_small.png" />
+                </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+        </children>
+    </StackPane>
+    <StackPane id="21" layoutX="872.0" layoutY="642.0" onMouseClicked="#imageClicked" prefHeight="63.0" prefWidth="98.0">
         <children>
             <ImageView fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                 <image>

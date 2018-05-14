@@ -11,14 +11,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Az 'Áll az alku' játék logikai részét megvalósító osztály
+ * Az 'Áll az alku' játék logikai részét megvalósító osztály.
  */
 public class DealOrNoDeal {
 
+    /**
+     * Táskaentitások kezeléséért felelős objektum.
+     */
     private BagService bagService;
+    /**
+     * Játékentitások kezeléséért felelős objektum.
+     */
     private GameService gameService;
+    /**
+     * Jelenlegi játék.
+     */
     private Game game;
+    /**
+     * Játékos neve.
+     */
     private String playerName;
+    /**
+     * {@link DealOrNoDeal} osztály naplózását végző objektum.
+     */
     private Logger logger=LoggerFactory.getLogger(DealOrNoDeal.class);
 
     /**
@@ -32,7 +47,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * DealOrNoDeal osztály konstruktora, mely egy új játékot hoz létre
+     * DealOrNoDeal osztály konstruktora, mely egy új játékot hoz létre.
      * @param gameService Játékhoz használt {@link GameService}
      * @param bagService Játékhoz használt {@link BagService}
      * @param playerName Játékos neve
@@ -44,7 +59,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * DealOrNoDeal osztály konstruktora, mely egy új játékot hoz létre
+     * DealOrNoDeal osztály konstruktora, mely egy új játékot hoz létre.
      * @param gameService Játékhoz használt {@link GameService}
      * @param bagService Játékhoz használt {@link BagService}
      * @param gameId Betöltendő játék azonosítója
@@ -60,32 +75,32 @@ public class DealOrNoDeal {
 
 
     /**
-     * Játék során kinyitott táskák száma
+     * Játék során kinyitott táskák száma.
      */
     private int openedBags=0;
     /**
-     * Meghatározza, hogy a játékos fogadott-e már el ajánlatot
+     * Meghatározza, hogy a játékos fogadott-e már el ajánlatot.
      */
     private boolean offerAccepted=false;
     /**
-     * Meghatározza, hogy hanyadik táskanyitás után ad ajánlatot a bank
+     * Meghatározza, hogy hanyadik táskanyitás után ad ajánlatot a bank.
      *
      * pl ha az 5. táskát nyitottuk ki, akkor az {@code Arrays.asList(5,8,11,14,16,18,20)} tömb alapján ajánlatot kell tennünk
      */
     private List<Integer> offersAtOpenedBags=Arrays.asList(5,8,11,14,16,18,20);
 
     /**
-     * Játékban lévő táskák tömbje
+     * Játékban lévő táskák tömbje.
      */
     private List<Bag> bags;
 
     /**
-     * Eddigi ajánlatok listája
+     * Eddigi ajánlatok listája.
      */
     private List<Long> offers = new ArrayList<>();
 
     /**
-     * Kinyit egy táskát a megadott számmal
+     * Kinyit egy táskát a megadott számmal.
      * @param bagNumber Kinyitandó táska száma
      * @return Visszaadja a kinyitott táskát. Ha a táska már nyitott volt, akkor {@code null}-t ad vissza
      */
@@ -116,12 +131,16 @@ public class DealOrNoDeal {
         return null;
     }
 
+    /**
+     * Megadja, hogy befejeződött-e már a játék.
+     * @return Visszaadja, hogy befejeződött-e már a játék.
+     */
     public boolean isFinished(){
         return openedBags==22;
     }
 
     /**
-     * Lekérdezi a játék során elért nyereményt
+     * Lekérdezi a játék során elért nyereményt.
      * @return Nyeremény szövegesen
      */
     public String getGamePrize(){
@@ -129,7 +148,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * Játéknak beállítja a nyereményét
+     * Játéknak beállítja a nyereményét.
      * @param prize beállítandó nyeremény
      */
     private void setGamePrize(String prize){
@@ -139,12 +158,16 @@ public class DealOrNoDeal {
     }
 
 
+    /**
+     * Visszaadja a táskák listáját.
+     * @return Visszaadja a táskák listáját.
+     */
     public List<Bag> getBags(){
         return bags;
     }
 
     /**
-     * Játék jelenlegi állása alapján készít egy ajánlatot és hozzáteszi az eddigi ajánlatok listájához {@link #offers}
+     * Játék jelenlegi állása alapján készít egy ajánlatot és hozzáteszi az eddigi ajánlatok listájához {@link #offers}.
      * @return Ajánlat, melyet a bank tett
      */
     public long makeOffer(){
@@ -158,7 +181,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * Megadja, hogy a játék jelenlegi állása alapján ajánlatot kell-e tennie a banknak
+     * Megadja, hogy a játék jelenlegi állása alapján ajánlatot kell-e tennie a banknak.
      * @return Visszaadja, hogy kell-e ajánlatot tenni
      */
     public boolean isOfferNeeded(){
@@ -166,7 +189,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * Megadja, hogy a játékos fogadott-e már el ajánlatot
+     * Megadja, hogy a játékos fogadott-e már el ajánlatot.
      * @return Visszaadja, hogy a játékos fogadott-e már el ajánlatot
      */
     public boolean isOfferAccepted(){
@@ -174,7 +197,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * Jelenlegi ajánlatot elfogadja
+     * Jelenlegi ajánlatot elfogadja.
      */
     public void acceptOffer(){
         offerAccepted = true;
@@ -184,7 +207,7 @@ public class DealOrNoDeal {
     }
 
     /**
-     * Megadja az eddigi ajánlatok listáját
+     * Megadja az eddigi ajánlatok listáját.
      * @return Visszaadja az eddigi ajánlatok listáját
      */
     public List<Long> getPreviousOffers() {

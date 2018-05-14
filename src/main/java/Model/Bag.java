@@ -8,7 +8,7 @@ import javax.persistence.*;
 //import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
 /**
- * Egy táska reprezentálásáért felelős osztály
+ * Egy táska reprezentálásáért felelős osztály.
  *
  * A könnyebb adatbázisbeli tárolás érdekében az osztály nem tartalmaz viselkedést (azaz ún. pehelysúlyú osztály).
  * Az adatbázisbeli tárolást végző osztály:{@link DAO.BagDao} és az ehhez tartozó service: {@link Logic.BagService}
@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Bag {
 
     /**
-     * Táska azonosítója
+     * Táska azonosítója.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +25,13 @@ public class Bag {
     private int id;
 
     /**
-     * Táska állapota
+     * Táska állapota.
      */
     @Column(name="IS_OPEN")
     private boolean open;
 
     /**
-     * Táska sorszáma
+     * Táska sorszáma.
      */
     @Column(name="BAG_NUMBER")
     private int bagNumber;
@@ -45,7 +45,7 @@ public class Bag {
     private long ammount;
 
     /**
-     * Táskában lévő nyeremény szöveggel
+     * Táskában lévő nyeremény szöveggel.
      *
      * Pl: 'Slag' nyeremény esetén 'Slag', 1000 esetén '1000'
      */
@@ -67,7 +67,7 @@ public class Bag {
     }*/
 
     /**
-     * Táska publikus teljes konstruktora
+     * Táska publikus teljes konstruktora.
      * @param open Nyitott-e a táska
      * @param bagNumber Táska sorszáma
      * @param ammount Táskában lévő nyeremény összeggel kifejezve (pl 1000)
@@ -83,13 +83,13 @@ public class Bag {
     }
 
     /**
-     * Táska publikus üres konstruktora
+     * Táska publikus üres konstruktora.
      */
     public Bag() {
     }
 
     /**
-     * Visszaadja a táska azonosítóját
+     * Visszaadja a táska azonosítóját.
      * @return Visszaadja a táska azonosítóját
      */
     public int getId() {
@@ -97,7 +97,7 @@ public class Bag {
     }
 
     /**
-     * Beállítja a táska azonosítóját
+     * Beállítja a táska azonosítóját.
      * @param id Beállítja a táska azonosítóját
      */
     public void setId(int id) {
@@ -105,7 +105,7 @@ public class Bag {
     }
 
     /**
-     * Lekérdezi a táska állapotát
+     * Lekérdezi a táska állapotát.
      * @return Visszaadja a táska állapotát
      */
     public boolean isOpen() {
@@ -113,7 +113,7 @@ public class Bag {
     }
 
     /**
-     * Beállítja a táska állapotát
+     * Beállítja a táska állapotát.
      * @param open Beállítandó állapot
      */
     public void setOpen(boolean open) {
@@ -121,7 +121,7 @@ public class Bag {
     }
 
     /**
-     * Visszaadja a táska sorszámát
+     * Visszaadja a táska sorszámát.
      * @return Visszaadja a táska sorszámát
      */
     public int getBagNumber() {
@@ -129,7 +129,7 @@ public class Bag {
     }
 
     /**
-     * Beállítja a táska sorszámát
+     * Beállítja a táska sorszámát.
      * @param bagNumber beállítandó sorszám
      */
     public void setBagNumber(int bagNumber) {
@@ -137,7 +137,7 @@ public class Bag {
     }
 
     /**
-     * Visszaadja a táskában lévő nyereményt számmal kifejezve
+     * Visszaadja a táskában lévő nyereményt számmal kifejezve.
      * @return Visszaadja a táskában lévő nyereményt számmal kifejezve
      */
     public long getAmmount() {
@@ -145,7 +145,7 @@ public class Bag {
     }
 
     /**
-     * Beállítja a táska értékét számmal kifejezve
+     * Beállítja a táska értékét számmal kifejezve.
      * @param ammount beállítandó érték
      */
     public void setAmmount(long ammount) {
@@ -153,7 +153,7 @@ public class Bag {
     }
 
     /**
-     * Visszaadja a táskában lévő nyereményt szöveggel kifejezve
+     * Visszaadja a táskában lévő nyereményt szöveggel kifejezve.
      * @return Visszaadja a táskában lévő nyereményt szöveggel kifejezve
      */
     public String getShowableAmmount() {
@@ -161,7 +161,7 @@ public class Bag {
     }
 
     /**
-     * Beállítja a táska értékét szöveggel kifejezve
+     * Beállítja a táska értékét szöveggel kifejezve.
      * @param showableAmmount beállítandó szöveg
      */
     public void setShowableAmmount(String showableAmmount) {
@@ -169,7 +169,7 @@ public class Bag {
     }
 
     /**
-     * Visszaadja azt a {@link Game}-t, amelyhez a táska tartozik
+     * Visszaadja azt a {@link Game}-t, amelyhez a táska tartozik.
      * @return Visszaadja azt a {@link Game}-t, amelyhez a táska tartozik
      */
     public Game getGameId() {

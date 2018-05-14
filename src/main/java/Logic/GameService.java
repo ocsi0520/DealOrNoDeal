@@ -8,19 +8,22 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 /**
- * Játékok kezeléséért felelős osztály
+ * Játékok kezeléséért felelős osztály.
  *
  * A {@link DealOrNoDeal} és a {@link GameDao} osztályok közötti kapcsolatot valósítja meg
  */
 public class GameService {
 
+    /**
+     * {@link GameService} osztály naplózását végző objektum.
+     */
     private Logger logger= LoggerFactory.getLogger(GameService.class);
     /**
-     * Játékok adatbázisbeli reprezentációjáért felelős objektum
+     * Játékok adatbázisbeli reprezentációjáért felelős objektum.
      */
     GameDao gameDao;
     /**
-     * {@link GameService} teljes publikus konstruktora
+     * {@link GameService} teljes publikus konstruktora.
      * @param gameDao táskák adatbázisbeli reprezentációjáért felelős objektum
      */
     public GameService(GameDao gameDao) {
@@ -28,7 +31,7 @@ public class GameService {
     }
 
     /**
-     * Adatbázisból lekérdezi az összes nem befejezett játékot
+     * Adatbázisból lekérdezi az összes nem befejezett játékot.
      * @return Visszaadja az összes nem befejezett játékot
      */
     public List<Game> getAllNotFinishedGames(){
@@ -66,7 +69,7 @@ public class GameService {
     }
 
     /**
-     * Elmenti az adott játék állapotát az adatbázisba
+     * Elmenti az adott játék állapotát az adatbázisba.
      * @param currentGame Elmentendő játék
      */
     public void saveGame(Game currentGame){

@@ -7,17 +7,17 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
- * {@link Game} objektumok adatbázisbeli tárolásáért felelős osztály
+ * {@link Game} objektumok adatbázisbeli tárolásáért felelős osztály.
  */
 public class GameDao {
 
     /**
-     * Perzisztenciaegységet kezelő objektum
+     * Perzisztenciaegységet kezelő objektum.
      */
     private EntityManager entityManager;
 
     /**
-     * {@link GameDao} teljes publikus konstruktora
+     * {@link GameDao} teljes publikus konstruktora.
      * @param entityManager perzisztenciaegységet kezelő objektum
      */
     public GameDao(EntityManager entityManager) {
@@ -25,7 +25,7 @@ public class GameDao {
     }
 
     /**
-     * Adatbázisba létrehoz egy játékot
+     * Adatbázisba létrehoz egy játékot.
      * @param game Adatbázisban létrehozandó játék
      */
     public void createGame(Game game){
@@ -35,7 +35,7 @@ public class GameDao {
     }
 
     /**
-     * Kiolvas egy játékot adatbázisból
+     * Kiolvas egy játékot adatbázisból.
      * @param Id Kiolvasandó játék azonosítója
      * @return Kiolvasott játék, ha adott {@code Id}-val nem talált játékot, akkor {@code null}-t ad vissza
      */
@@ -44,7 +44,7 @@ public class GameDao {
     }
 
     /**
-     * Egy játék tartalmát frissíti adatbázisban
+     * Egy játék tartalmát frissíti adatbázisban.
      * @param game Frissítendő játék
      */
     public void updateGame(Game game){
@@ -54,7 +54,7 @@ public class GameDao {
     }
 
     /**
-     * Kitöröl egy játékot az adatbázisból
+     * Kitöröl egy játékot az adatbázisból.
      * @param game Törlendő játék
      */
     public void deleteGame(Game game){
@@ -64,7 +64,7 @@ public class GameDao {
     }
 
     /**
-     * Kiolvassa az összes olyan játékot, amelyek nem lettek befejezve
+     * Kiolvassa az összes olyan játékot, amelyek nem lettek befejezve.
      * @return Visszaadja az összes nem befejezett játékot
      */
     //__QUESTION__ //így jó-e

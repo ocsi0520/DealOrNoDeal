@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 public class Game {
     /**
-     * Játék azonosítója
+     * Játék azonosítója.
      */
     @Id
     @Column(name="ID")
@@ -23,31 +23,31 @@ public class Game {
 
     //https://stackoverflow.com/questions/11938253/jpa-joincolumn-vs-mappedby?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
     /**
-     * Játékhoz tartozó {@link Bag}-ek listája
+     * Játékhoz tartozó {@link Bag}-ek listája.
      */
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="gameId")
     private List<Bag> bags;
 
     /**
-     * Játék állapota
+     * Játék állapota.
      */
     @Column(name="FINISHED", nullable = false)
     private boolean finished;
 
     /**
-     * Játékos neve
+     * Játékos neve.
      */
     @Column(name="PLAYER_NAME", nullable = false)
     private String playerName;
 
     /**
-     * Játékos végső nyereménye
+     * Játékos végső nyereménye.
      */
     @Column(name="PRIZE",nullable = true)
     private String prize;
 
     /**
-     * Játék publikus teljes konstruktora
+     * Játék publikus teljes konstruktora.
      * @param bags Játékhoz tartozó táskák listája
      * @param finished Játék állapota
      * @param playerName Játékos neve
@@ -61,13 +61,13 @@ public class Game {
     }
 
     /**
-     * Játék publikus üres konstruktora
+     * Játék publikus üres konstruktora.
      */
     public Game() {
     }
 
     /**
-     * Visszaadja a játék azonosítóját
+     * Visszaadja a játék azonosítóját.
      * @return Visszaadja a játék azonosítóját
      */
     public int getId() {
@@ -75,7 +75,7 @@ public class Game {
     }
 
     /**
-     * Beállítja a játék azonosítóját
+     * Beállítja a játék azonosítóját.
      * @param id Beállítandó azonosító
      */
     public void setId(int id) {
@@ -83,7 +83,7 @@ public class Game {
     }
 
     /**
-     * Visszaadja a játékhoz tartozó {@link Bag}-ek listáját
+     * Visszaadja a játékhoz tartozó {@link Bag}-ek listáját.
      * @return Visszaadja a játékhoz tartozó {@link Bag}-ek listáját
      */
     public List<Bag> getBags() {
@@ -91,7 +91,7 @@ public class Game {
     }
 
     /**
-     * Beállítja a játékhoz tartozó {@link Bag}-ek listáját
+     * Beállítja a játékhoz tartozó {@link Bag}-ek listáját.
      * @param bags Játékhoz tartozó táskák listája
      */
     public void setBags(List<Bag> bags) {
@@ -99,7 +99,7 @@ public class Game {
     }
 
     /**
-     * Lekérdezi a játék állapotát
+     * Lekérdezi a játék állapotát.
      * @return Visszaadja a játék állapotát
      */
     public boolean isFinished() {
@@ -107,7 +107,7 @@ public class Game {
     }
 
     /**
-     * Beállítja a játék állapotát
+     * Beállítja a játék állapotát.
      * @param finished Beállítandó állapot
      */
     public void setFinished(boolean finished) {
@@ -115,7 +115,7 @@ public class Game {
     }
 
     /**
-     * Visszaadja a játékos nevét
+     * Visszaadja a játékos nevét.
      * @return Visszaadja a játékos nevét
      */
     public String getPlayerName() {
@@ -123,7 +123,7 @@ public class Game {
     }
 
     /**
-     * Beállítja a játékos nevét
+     * Beállítja a játékos nevét.
      * @param playerName Játékos neve
      */
     public void setPlayerName(String playerName) {
@@ -131,7 +131,7 @@ public class Game {
     }
 
     /**
-     * Visszaadja a játékos által elért végső nyereményt
+     * Visszaadja a játékos által elért végső nyereményt.
      * @return Visszaadja a játékos által elért végső nyereményt
      */
     public String getPrize() {
@@ -139,7 +139,7 @@ public class Game {
     }
 
     /**
-     * Beállítja a végső nyereményt
+     * Beállítja a végső nyereményt.
      * @param prize nyeremény
      */
     public void setPrize(String prize) {

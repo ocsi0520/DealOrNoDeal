@@ -1,4 +1,4 @@
 /**
- * A játék logikai részét megvalósító csomag
+ * A játék logikai részét megvalósító csomag.
  */
 package Logic;

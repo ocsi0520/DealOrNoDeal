@@ -1,4 +1,4 @@
 /**
- * A játék adatbázisbeli reprezentációjáért felelős csomag
+ * A játék adatbázisbeli reprezentációjáért felelős csomag.
  */
 package Model;

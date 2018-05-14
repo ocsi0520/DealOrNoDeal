@@ -23,17 +23,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- * Perzisztenciaegységet kezelő objektum eléréséért felelős osztály
+ * Perzisztenciaegységet kezelő objektum eléréséért felelős osztály.
  */
 public class EntityManagerProvider {
 
     /**
-     * Perzisztenciaegységet kezelő objektum létrehozásáért felelős objektum
+     * Perzisztenciaegységet kezelő objektum létrehozásáért felelős objektum.
      */
     private static EntityManagerFactory emf;
 
     /**
-     * Perzisztenciaegységet kezelő objektum
+     * Perzisztenciaegységet kezelő objektum.
      */
     private static EntityManager em;
 
@@ -43,7 +43,7 @@ public class EntityManagerProvider {
     }
 
     /**
-     * Visszaadja a perzisztenciaegységet kezelő objektumot
+     * Visszaadja a perzisztenciaegységet kezelő objektumot.
      * @return Visszaadja a perzisztenciaegységet kezelő objektumot
      */
     public static EntityManager provideEntityManager(){
@@ -51,7 +51,7 @@ public class EntityManagerProvider {
     }
 
     /**
-     * Lezárja a kapcsolatot a perzisztenciaegységgel
+     * Lezárja a kapcsolatot a perzisztenciaegységgel.
      */
     public static void closeConnection(){
         em.close();

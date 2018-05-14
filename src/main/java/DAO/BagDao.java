@@ -8,25 +8,25 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
- * {@link Bag} objektumok adatbázisbeli tárolásáért felelős osztály
+ * {@link Bag} objektumok adatbázisbeli tárolásáért felelős osztály.
  */
 public class BagDao {
 
     /**
-     * Perzisztenciaegységet kezelő objektum
+     * Perzisztenciaegységet kezelő objektum.
      */
     private EntityManager entityManager;
 
     /**
-     * {@link BagDao} teljes publikus konstruktora
-     * @param entityManager perzisztenciaegységet kezelő objektum
+     * {@link BagDao} teljes publikus konstruktora.
+     * @param entityManager perzisztenciaegységet kezelő objektum.
      */
     public BagDao(EntityManager entityManager) {
         this.entityManager=entityManager;
     }
 
     /**
-     * Adatbázisba létrehoz egy táskát
+     * Adatbázisba létrehoz egy táskát.
      * @param bag Adatbázisban létrehozandó táska
      */
     public void createBag(Bag bag){
@@ -36,7 +36,7 @@ public class BagDao {
     }
 
     /**
-     * Kiolvas egy táskát adatbázisból
+     * Kiolvas egy táskát adatbázisból.
      * @param Id Kiolvasandó táska azonosítója
      * @return Kiolvasott táska, ha adott {@code Id}-val nem talált táskát, akkor {@code null}-t ad vissza
      */
@@ -45,7 +45,7 @@ public class BagDao {
     }
 
     /**
-     * Egy táska tartalmát frissíti adatbázisban
+     * Egy táska tartalmát frissíti adatbázisban.
      * @param bag Frissítendő táska
      */
     public void updateBag(Bag bag){
@@ -55,7 +55,7 @@ public class BagDao {
     }
 
     /**
-     * Kitöröl egy táskát az adatbázisból
+     * Kitöröl egy táskát az adatbázisból.
      * @param bag Törlendő táska
      */
     public void deleteBag(Bag bag){
@@ -65,11 +65,10 @@ public class BagDao {
     }
 
     /**
-     * Kiolvassa egy játékhoz tartozó összes táskát az adatbázisból
+     * Kiolvassa egy játékhoz tartozó összes táskát az adatbázisból.
      * @param gameId Játék azonosítója, amelyhez tartozó táskákat szeretnénk kiolvasni
      * @return Visszaadja a játékhoz tartozó táskák listáját
      */
-    //__QUESTION__
     public List<Bag> findAllBags(Game gameId){
         TypedQuery<Bag> query = entityManager.createQuery("SELECT b FROM Model.Bag b WHERE GAME_ID = " + gameId.getId(), Bag.class);
         return query.getResultList();

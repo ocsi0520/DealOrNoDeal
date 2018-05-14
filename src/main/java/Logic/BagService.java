@@ -11,20 +11,23 @@ import java.text.NumberFormat;
 import java.util.*;
 
 /**
- * Táskák kezeléséért felelős osztály
+ * Táskák kezeléséért felelős osztály.
  *
  * A {@link DealOrNoDeal} és a {@link BagDao} osztályok közötti kapcsolatot valósítja meg
  */
 public class BagService {
 
+    /**
+     * {@link BagService} osztály naplózását végző objektum.
+     */
     private Logger logger= LoggerFactory.getLogger(BagService.class);
     /**
-     * Táskák adatbázisbeli reprezentációjáért felelős objektum
+     * Táskák adatbázisbeli reprezentációjáért felelős objektum.
      */
     private BagDao bagDao;
 
     /**
-     * {@link BagService} teljes publikus konstruktora
+     * {@link BagService} teljes publikus konstruktora.
      * @param bagDao táskák adatbázisbeli reprezentációjáért felelős objektum
      */
     public BagService(BagDao bagDao) {
@@ -32,7 +35,7 @@ public class BagService {
     }
 
     /**
-     * Legenerálja a játékhoz használt táskákat
+     * Legenerálja a játékhoz használt táskákat.
      * @param gameId Mely játékhoz kell legenerálni a táskákat
      * @return 22 db véletlenszerűen legenerált táska
      */
@@ -89,7 +92,10 @@ public class BagService {
     }
 
     /**
-     * Visszaad 2 táskát, amelyben tárgynyeremények vannak
+     * Visszaad 2 táskát, amelyben tárgynyeremények vannak.
+     * @param firstBagNumber  Az első táskához társított táskaszám
+     * @param secondBagNumber  A második táskához társított táskaszám
+     * @param gameId Azon játék, amelyhez a 2 tárgynyereményt tartalmazó táskát legeneráljuk
      * @return Visszaad 2 táskát, amelyben tárgynyeremények vannak
      */
     private Pair<Bag, Bag> generateTwoItems(int firstBagNumber, int secondBagNumber,Game gameId){
@@ -117,7 +123,7 @@ public class BagService {
     }
 
     /**
-     * Táska kinyitását megvalósító metódus
+     * Táska kinyitását megvalósító metódus.
      * @param bag kinyitandó táska
      */
     public void openBag(Bag bag){
@@ -128,7 +134,7 @@ public class BagService {
 
 
     /**
-     * Játék kezdésekor a táskák betöltéséért felelős függvény
+     * Játék kezdésekor a táskák betöltéséért felelős függvény.
      * @param gameId Betölteni kívánt játék azonosítója
      * @param isNewGame újonnan lett-e létrehozva a játék (azaz még az adatbázisban nem volt legenerálva hozzá a 22 táska)
      * @return Visszaadja a játék indításakkor az összes táskát

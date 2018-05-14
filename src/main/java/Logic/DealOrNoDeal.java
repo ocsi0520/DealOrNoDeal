@@ -3,6 +3,7 @@ package Logic;
 import Model.Bag;
 import Model.Game;
 
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -170,7 +171,9 @@ public class DealOrNoDeal {
      */
     public void acceptOffer(){
         offerAccepted=true;
-        setGamePrize(offers.get(offers.size()-1).toString());
+        long lastOffer=offers.get(offers.size()-1);
+        String formattedOffer= NumberFormat.getInstance(new Locale("hu_HU")).format(lastOffer);
+        setGamePrize(formattedOffer);
     }
 
     /**

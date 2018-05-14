@@ -63,7 +63,7 @@ public class StudioController {
             if(!dealOrNoDeal.isOfferAccepted()) { //és még nem fogadott el egyet sem, akkor elfogadhatja
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Banktól új ajánlat jött");
-                alert.setHeaderText("A bank ajánlata " + formattedOffer + " ft.");
+                alert.setHeaderText("A bank ajánlata " + formattedOffer + ".");
                 alert.setContentText("Elfogadod az ajánlatot?");
 
                 ButtonType buttonTypeYes = new ButtonType("Igen");
@@ -79,7 +79,7 @@ public class StudioController {
             else{ //Ha már fogadott el előtte ajánlatot, akkor csak szemléltetésül írjuk ki
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Banktól új ajánlat jött");
-                alert.setHeaderText("A bank ajánlata " + formattedOffer + " ft lett volna.");
+                alert.setHeaderText("A bank ajánlata " + formattedOffer + " lett volna.");
                 //alert.setContentText("I have a great message for you!");
                 alert.showAndWait();
             }
@@ -87,7 +87,7 @@ public class StudioController {
         else if(dealOrNoDeal.isFinished()){ //Ha ez volt az utolsó táska
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Gratulálunk");
-            alert.setHeaderText("A nyereményed " + dealOrNoDeal.getGamePrize() + " ft.");
+            alert.setHeaderText("A nyereményed: " + dealOrNoDeal.getGamePrize());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
             goToMain();

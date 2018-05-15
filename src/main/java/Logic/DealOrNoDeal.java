@@ -41,7 +41,7 @@ public class DealOrNoDeal {
      * @param gameService Játékhoz használt {@link GameService}
      * @param bagService Játékhoz használt {@link BagService}
      */
-    public DealOrNoDeal(GameService gameService, BagService bagService){
+    private DealOrNoDeal(GameService gameService, BagService bagService){
         this.gameService=gameService;
         this.bagService=bagService;
     }

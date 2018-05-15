@@ -50,7 +50,7 @@ public class GameService {
         game.setFinished(false);
         game.setPlayerName(playerName);
         gameDao.createGame(game);
-        logger.info("New game (id:{0}) has been created",game.getId());
+        logger.info("New game (id:{}) has been created",game.getId());
         return game;
     }
 
@@ -64,7 +64,7 @@ public class GameService {
     public Game findGameById(Integer Id){
         Game game=gameDao.readGame(Id);
         if(game==null)
-            logger.error("Game with {0} id was not found", Id);
+            logger.error("Game with {} id was not found", Id);
         return gameDao.readGame(Id);
     }
 

@@ -148,10 +148,13 @@ public class BagService {
             logger.info("Bags were inserted into database");
         }
         else {
-            //__QUESTION__
             bags=bagDao.findAllBags(gameId);
-            if(bags==null || bags.size()==0)
+            if(bags==null || bags.size()==0) {
                 logger.error("Loaded game has no bag");
+                throw new RuntimeException(
+                        String.format("Did not find bags for game: {}",gameId.getId())
+                );
+            }
         }
 
         return bags;

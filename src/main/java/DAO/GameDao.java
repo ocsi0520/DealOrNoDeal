@@ -67,7 +67,6 @@ public class GameDao {
      * Kiolvassa az összes olyan játékot, amelyek nem lettek befejezve.
      * @return Visszaadja az összes nem befejezett játékot
      */
-    //__QUESTION__ //így jó-e
     public List<Game> findAllNotFinishedGames(){
         TypedQuery<Game> query = entityManager.createQuery("SELECT g FROM Model.Game g WHERE FINISHED = FALSE", Game.class);
         return query.getResultList();

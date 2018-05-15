@@ -40,9 +40,9 @@ public class DealOrNoDealTest {
     public void setUp() throws Exception {
         bagService=new BagService(bagDao);
         gameService=new GameService(gameDao);
-        Game game = new Game();
+        //Game game = new Game();
 
-        doNothing().when(gameDao).createGame(game);
+        //doNothing().when(gameDao).createGame(game);
 
         dealOrNoDeal=new DealOrNoDeal(gameService,bagService,"Test");
     }
@@ -68,8 +68,8 @@ public class DealOrNoDealTest {
 
     @Test
     public void isOfferNeededShouldBeTrueAtCertainOpens() {
-        long seed=System.nanoTime();
-        Random random=new Random(seed);
+        /*long seed=System.nanoTime();
+        Random random=new Random(seed);*/
         List<Integer> offersAtOpenedBags=Arrays.asList(5,8,11,14,16,18,20);
         for(int bagIndex=0;bagIndex<21;bagIndex++){
             int bagNumber=dealOrNoDeal.getBags().get(bagIndex).getBagNumber();

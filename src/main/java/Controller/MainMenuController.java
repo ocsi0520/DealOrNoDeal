@@ -65,7 +65,7 @@ public class MainMenuController {
             Main.stage.setScene(scene);
             Main.stage.show();
         } catch (IOException e) {
-            logger.error("Hiba a main.fxml betöltésénél",e);
+            logger.error("Hiba a Studio.fxml betöltésénél",e);
             throw new RuntimeException(e);
         }
     }

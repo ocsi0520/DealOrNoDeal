@@ -106,8 +106,12 @@ public class DealOrNoDeal {
      */
     public Bag openBag(int bagNumber){
         Bag bag = bags.stream().filter(x->x.getBagNumber() == bagNumber).findFirst().get();
-        if(bags.indexOf(bag)==21 && openedBags<21)
+        if(bags.indexOf(bag)==21 && openedBags<21) {
+            logger.warn("id: " + bag.getId() +
+                    " number:" + bagNumber +
+                    " can't be opened because the players own it");
             return null;
+        }
         if(!bag.isOpen()) {
             openedBags++;
             bagService.openBag(bag);

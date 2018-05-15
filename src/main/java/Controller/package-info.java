@@ -1,4 +1,4 @@
 /**
- * A játék vizualizációjáért felelős csomag
+ * A játék vizualizációjáért felelős csomag.
  */
 package Controller;
